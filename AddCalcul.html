@@ -7,12 +7,44 @@
 <script type="text/javascript">
             
      function addNumbers() {
-                
-         var firstNumber = parseFloat(document.getElementById("firstNum").value); //Set the first num and parse  
-         var secondNumber = parseFloat(document.getElementById("secondNum").value); //Set the second num and parse  
-         var result = firstNumber + secondNumber;
-         document.getElementById("txtResult").value = result; //display the result in DOM
+         
+         var firstNumber = document.getElementById("firstNum").value;
+         
+         if(firstNumber == ""){
+             alert("First number is required");
+             return;
+         }
+         
+         firstNumber = parseFloat(firstNumber);
+         
+         if(isNaN(firstNumber)){
+             alert("Please enter a valid number");
+             return;
+         }
+         
+         var secondNumber = document.getElementById("secondNum").value;
+         
+         if(secondNumber == ""){
+             alert("Second number is required");
+             return;
+         }
+         
+         secondNumber = parseFloat(secondNumber);
+         
+         if(isNaN(secondNumber)){
+             alert("Please enter a valid number");
+             return;
+         }         
+            
+         var result = document.getElementById("txtResult").value = firstNumber + secondNumber; //display the result in DOM
      }
+    
+    function reset() {
+        
+        document.getElementById("firstNum").value = "";
+        document.getElementById("secondNum").value = "";
+        document.getElementById("txtResult").value = "";
+    }
             
 </script>    
     
@@ -41,10 +73,12 @@
         
         <div >
         <tr >
-            <td align="center" colspan="2"><input type="button" value="Add" onclick="addNumbers()"> </td>
+            <td align="center" colspan="2"><input type="button" id="btn" value="Add" onclick="addNumbers()"> </td>
         </tr>
         </div>  
             
     </table>
+    
+    <input type="button" value="Reset" id="reset" onclick="reset()">
 
 </body>

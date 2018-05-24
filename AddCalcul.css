@@ -1,0 +1,33 @@
+body{
+    
+    background: pink;
+    
+}
+
+table {
+        
+    border: 1px solid black;
+    font-family: sans-serif;
+    float: left;        
+    }
+        
+td {
+            
+    border: none;
+    font-family:cursive
+    } 
+
+#btn:hover {
+    
+    background-color: #4CAF50; /* Green */
+    color: white;
+     
+}
+
+ #reset {
+        
+    position: relative;
+    top:50px;
+    left: 10px;      
+       
+    }
